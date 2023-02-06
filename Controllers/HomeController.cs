@@ -1,8 +1,8 @@
-﻿using BankAccountApp.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SimpleEmployeeApp.Models;
 using System.Diagnostics;
 
-namespace BankAccountApp.Controllers
+namespace SimpleEmployeeApp.Controllers
 {
     public class HomeController : Controller
     {

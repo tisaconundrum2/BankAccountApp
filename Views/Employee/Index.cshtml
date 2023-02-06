@@ -1,0 +1,57 @@
+@model IEnumerable<SimpleEmployeeApp.Models.DomainModels.Employee>
+@{
+    ViewData["Title"] = "Employee";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!-- Bootstrap Container, table of Employees -->
+
+<div class="container">
+    <table id="employeeTable" class="table display">
+        <thead>
+            <tr>
+                <th scope="col">Employee Id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Middle Initial</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Zip</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Social Security Number</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.firstName</td>
+                    <td>@emp.middleInitial</td>
+                    <td>@emp.lastName</td>
+                    <td>@emp.address</td>
+                    <td>@emp.city</td>
+                    <td>@emp.state</td>
+                    <td>@emp.zip</td>
+                    <td>@emp.dateOfBirth.ToString("MM-dd-yyyy")</td>
+                    <td>@emp.socialSecurityNumber</td>
+                    <td><a asp-controller="Employee" asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-success">Edit</a></td>
+                    <td><a asp-controller="Employee" asp-action="Delete" asp-route-id="@emp.Id" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a asp-controller="Employee" asp-action="Add" class="btn btn-primary">Add Employee</a>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#employeeTable').DataTable();
+        });
+    </script>
+}

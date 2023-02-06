@@ -1,4 +1,4 @@
-namespace BankAccountApp.Models
+namespace SimpleEmployeeApp.Models
 {
     public class ErrorViewModel
     {

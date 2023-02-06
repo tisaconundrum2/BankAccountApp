@@ -3,16 +3,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:27060",
-      "sslPort": 44359
+      "applicationUrl": "http://localhost:51863",
+      "sslPort": 44324
     }
   },
   "profiles": {
-    "BankAccountApp": {
+    "SimpleEmployeeApp": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7060;http://localhost:5147",
+      "applicationUrl": "https://localhost:7082;http://localhost:5170",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

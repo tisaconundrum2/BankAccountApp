@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using SimpleEmployeeApp.Models.DataLayer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<>
+builder.Services.AddDbContext<EmployeeContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
